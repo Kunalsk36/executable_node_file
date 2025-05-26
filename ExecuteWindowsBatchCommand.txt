@@ -1,0 +1,14 @@
+echo kill anything runnning on port 3000 to avoid conflict
+for /f "tokens=5" %%a in ('netstat -a -n -o ^| findstr:3000') do taskkill /PID %%a /F
+
+echo Change to the app directory
+cd D:\MCAsemII\DevOps\PracticeProjectGitlab\NodeProject
+
+echo install dependencies
+npm install
+
+echo installing mime
+npm i mime
+
+echo start the app in new window
+node app.js
